@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<topology xmlns="http://www.cisco.com/VIRL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="0.95" xsi:schemaLocation="http://www.cisco.com/VIRL https://raw.github.com/CiscoVIRL/schema/v0.95/virl.xsd">
+    <extensions>
+        <entry key="management_network" type="String">user</entry>
+    </extensions>
+    <node location="472,110" type="SIMPLE" subtype="CSR1000v" name="csr1000v-1" ipv4="172.16.10.1">
+        <extensions>
+            <entry key="config" type="string"/>
+            <entry key="AutoNetkit.ASN" type="Integer">1</entry>
+            <entry key="AutoNetkit.ospf_area" type="String">0</entry>
+            <entry key="AutoNetkit.IGP" type="String">ospf</entry>
+            <entry key="AutoNetkit.ibgp_role" type="String">Disabled</entry>
+        </extensions>
+        <interface name="GigabitEthernet2" id="0" ipv4="172.16.0.1"/>
+        <interface name="GigabitEthernet3" id="1"/>
+        <interface name="GigabitEthernet4" id="2"/>
+    </node>
+    <node location="472,208" type="SIMPLE" subtype="CSR1000v" name="csr1000v-2">
+        <extensions>
+            <entry key="AutoNetkit.ASN" type="Integer">1</entry>
+        </extensions>
+        <interface name="GigabitEthernet2" id="0"/>
+        <interface name="GigabitEthernet3" id="1"/>
+    </node>
+    <node location="368,208" type="SIMPLE" subtype="CSR1000v" name="csr1000v-3" ipv4="172.16.10.1">
+        <extensions>
+            <entry key="AutoNetkit.ASN" type="Integer">1</entry>
+            <entry key="AutoNetkit.ospf_area" type="String">0</entry>
+            <entry key="AutoNetkit.IGP" type="String">ospf</entry>
+            <entry key="AutoNetkit.ibgp_role" type="String">Disabled</entry>
+        </extensions>
+        <interface name="GigabitEthernet2" id="0" ipv4="172.16.0.1"/>
+        <interface name="GigabitEthernet3" id="1"/>
+    </node>
+    <node location="575,208" type="SIMPLE" subtype="CSR1000v" name="csr1000v-4">
+        <extensions>
+            <entry key="AutoNetkit.ASN" type="Integer">1</entry>
+        </extensions>
+        <interface name="GigabitEthernet2" id="0"/>
+        <interface name="GigabitEthernet3" id="1"/>
+    </node>
+    <node location="472,313" type="SIMPLE" subtype="CSR1000v" name="csr1000v-5">
+        <extensions>
+            <entry key="AutoNetkit.ASN" type="Integer">1</entry>
+        </extensions>
+        <interface name="GigabitEthernet2" id="0"/>
+        <interface name="GigabitEthernet3" id="1"/>
+        <interface name="GigabitEthernet4" id="2"/>
+        <interface name="GigabitEthernet5" id="3"/>
+    </node>
+    <node location="472,404" type="SIMPLE" subtype="CSR1000v" name="csr1000v-6">
+        <extensions>
+            <entry key="AutoNetkit.ASN" type="Integer">1</entry>
+        </extensions>
+        <interface name="GigabitEthernet2" id="0"/>
+    </node>
+    <connection src="/virl:topology/virl:node[5]/virl:interface[4]" dst="/virl:topology/virl:node[6]/virl:interface[1]"/>
+    <connection src="/virl:topology/virl:node[4]/virl:interface[2]" dst="/virl:topology/virl:node[5]/virl:interface[1]"/>
+    <connection src="/virl:topology/virl:node[3]/virl:interface[2]" dst="/virl:topology/virl:node[5]/virl:interface[3]"/>
+    <connection src="/virl:topology/virl:node[1]/virl:interface[1]" dst="/virl:topology/virl:node[3]/virl:interface[1]"/>
+    <connection src="/virl:topology/virl:node[1]/virl:interface[2]" dst="/virl:topology/virl:node[2]/virl:interface[1]"/>
+    <connection src="/virl:topology/virl:node[1]/virl:interface[3]" dst="/virl:topology/virl:node[4]/virl:interface[1]"/>
+    <connection src="/virl:topology/virl:node[2]/virl:interface[2]" dst="/virl:topology/virl:node[5]/virl:interface[2]"/>
+</topology>
